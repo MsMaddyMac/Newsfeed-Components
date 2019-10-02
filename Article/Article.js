@@ -121,8 +121,22 @@ const data = [
     article.appendChild(articleContent3);
     article.appendChild(articleButton);
 
-    
+    article.classList.add('article');
+    articleDate.classList.add('date');
+    articleButton.classList.add('expandButton');
+
+    articleTitle.textContent = title;
+    articleDate.textContent = date;
+    articleContent1.textContent = firstParagraph;
+    articleContent2.textContent = secondParagraph;
+    articleContent3.textContent = thirdParagraph;
+
+    return article
   }
+
+  data.forEach(info => {
+    articles.appendChild(createArticle(info.title, info.date, info.firstParagraph, info.secondParagraph, info.thirdParagraph))
+  })
 
 /* Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div. */
 
